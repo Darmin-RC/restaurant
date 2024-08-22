@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const title = "About Us";
+const description =
+  "Welcome to Brutal Restobar, where we serve mouth-watering dishes with a unique twist. Our restaurant blends great food with a vibrant atmosphere, making every dining experience memorable. Join us for an unforgettable culinary journey.";
+const imageUrl =
+  "https://i.pinimg.com/474x/f8/1f/6d/f81f6d2677effd32302861847d571fde.jpg";
+---
+
+<Layout>
+  <section class="m-4 py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col lg:flex-row items-center">
+        <div class="lg:w-1/2 lg:pr-8 mb-8 lg:mb-0">
+          <img
+            src={imageUrl}
+            alt="About Brutal Restobar"
+            class="w-full h-auto rounded shadow-lg"
+          />
+        </div>
+        <div class="lg:w-1/2">
+          <h2 class="text-4xl font-bold mb-4 text-gray-800">{title}</h2>
+          <p class="text-lg leading-relaxed text-gray-700">{description}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

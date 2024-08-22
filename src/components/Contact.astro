@@ -1,0 +1,65 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <section class="bg-white m-4 p-2 rounded shadow-md flex justify-center">
+    <div class="py-10 lg:py-20 px-2 lg:px-12 m-4 max-w-2xl">
+      <h2 class="mb-6 text-4xl font-extrabold text-center text-red-600">
+        Contact Us
+      </h2>
+      <p class="mb-10 text-lg text-center text-gray-600">
+        Contact us by completing the form below. Lorem ipsum dolor sit amet
+        consectetur adipisicing elit.
+      </p>
+      <form action="#" class="space-y-6">
+        <div>
+          <label
+            for="email"
+            class="block mb-2 text-sm font-medium text-gray-700"
+            >Your email</label
+          >
+          <input
+            type="email"
+            id="email"
+            class="block w-full px-4 py-2 text-sm text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500"
+            placeholder="name@example.com"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="subject"
+            class="block mb-2 text-sm font-medium text-gray-700">Subject</label
+          >
+          <input
+            type="text"
+            id="subject"
+            class="block w-full px-4 py-2 text-sm text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:ring-red-500 focus:red-indigo-500"
+            placeholder="Let us know how we can help you"
+            required
+          />
+        </div>
+        <div>
+          <label
+            for="message"
+            class="block mb-2 text-sm font-medium text-gray-700"
+            >Your message</label
+          >
+          <textarea
+            id="message"
+            rows="5"
+            class="block w-full px-4 py-2 text-sm text-gray-800 bg-gray-100 border border-gray-300 rounded-lg focus:ring-red-500 focus:border-red-500"
+            placeholder="Leave a comment..."
+            required></textarea>
+        </div>
+        <button
+          type="submit"
+          class="w-full py-3 px-5 text-sm font-medium text-white bg-red-600 rounded-lg hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300"
+        >
+          Send message
+        </button>
+      </form>
+    </div>
+  </section>
+</Layout>

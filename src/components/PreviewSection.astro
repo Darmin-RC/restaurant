@@ -1,0 +1,62 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PreviewCard from "./PreviewCard.astro";
+---
+
+<Layout>
+  <div class="bg-slate-100 py-16">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-8">Introducing Our Latest Product</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <PreviewCard
+          title="Product One Yeah"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus."
+          price={19.99}
+          src="https://www.unileverfoodsolutions.com.mx/tendencias/de-mexico-para-el-mundo/platillos-mexicanos/top10-platillos/jcr:content/parsys/content-aside-footer/columncontrol_copy/columnctrl_parsys_1/textimage_copy/image.transform/jpeg-optimized/image.1592429867593.jpg"
+          alt="Product one"
+          href="/product-details/product-one-yeah"
+        />
+        <PreviewCard
+          title="Product Two Yeah"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus."
+          price={39.99}
+          src="https://blog.grandvoyage.com/wp-content/uploads/2019/12/casado-8630029994_a756b2fc53_o.jpg"
+          alt="Product two"
+          href="/product-details/product-two-yeah"
+        />
+        <PreviewCard
+          title="Product Three Yeah"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus."
+          price={29.99}
+          src="https://www.buscounviaje.com/blog/wp-content/uploads/Casado-1024x936.jpg"
+          alt="Product three"
+          href="/product-details/product-three-yeah"
+        />
+        <PreviewCard
+          title="Product Four Yeah"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus."
+          price={49.99}
+          src="https://saborgourmet.com/wp-content/uploads/Comida-Tipica-Costa-Rica.jpg"
+          alt="Product four"
+          href="/product-details/product-four-yeah"
+        />
+        <PreviewCard
+          title="Product Five Yeah"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus."
+          price={29.99}
+          src="https://i0.wp.com/sabordelobueno.com/wp-content/uploads/2018/01/casado-costa-rica.jpg?resize=750%2C500"
+          alt="Product five"
+          href="/product-details/product-five-yeah"
+        />
+        <PreviewCard
+          title="Product Six Yeah"
+          description="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus."
+          price={39.99}
+          src="https://tipsparatuviaje.com/wp-content/uploads/2018/09/tacos-comida-mexicana.jpg"
+          alt="Product six"
+          href="/product-details/product-six-yeah"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

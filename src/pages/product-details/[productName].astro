@@ -1,0 +1,93 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProductDetails from "../../components/ProductDetails.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+
+export async function getStaticPaths() {
+  const products = [
+    {
+      title: "Product One Yeah",
+      price: 19.99,
+      src: "https://www.unileverfoodsolutions.com.mx/tendencias/de-mexico-para-el-mundo/platillos-mexicanos/top10-platillos/jcr:content/parsys/content-aside-footer/columncontrol_copy/columnctrl_parsys_1/textimage_copy/image.transform/jpeg-optimized/image.1592429867593.jpg",
+      alt: "Product one",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus.",
+      details: "This is a detailed description for Product One.",
+      reviewsCount: 20,
+    },
+    {
+      title: "Product Two Yeah",
+      price: 39.99,
+      src: "https://blog.grandvoyage.com/wp-content/uploads/2019/12/casado-8630029994_a756b2fc53_o.jpg",
+      alt: "Product two",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus.",
+      details: "This is a detailed description for Product Two.",
+      reviewsCount: 45,
+    },
+    {
+      title: "Product Three Yeah",
+      price: 29.99,
+      src: "https://www.buscounviaje.com/blog/wp-content/uploads/Casado-1024x936.jpg",
+      alt: "Product three",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus.",
+      details: "This is a detailed description for Product Three.",
+      reviewsCount: 38,
+    },
+    {
+      title: "Product Four Yeah",
+      price: 49.99,
+      src: "https://saborgourmet.com/wp-content/uploads/Comida-Tipica-Costa-Rica.jpg",
+      alt: "Product four",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus.",
+      details: "This is a detailed description for Product Four.",
+      reviewsCount: 52,
+    },
+    {
+      title: "Product Five Yeah",
+      price: 29.99,
+      src: "https://i0.wp.com/sabordelobueno.com/wp-content/uploads/2018/01/casado-costa-rica.jpg?resize=750%2C500",
+      alt: "Product five",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus.",
+      details: "This is a detailed description for Product Five.",
+      reviewsCount: 33,
+    },
+    {
+      title: "Product Six Yeah",
+      price: 39.99,
+      src: "https://tipsparatuviaje.com/wp-content/uploads/2018/09/tacos-comida-mexicana.jpg",
+      alt: "Product six",
+      description:
+        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum, eveniet. Tenetur officiis hic velit quas accusamus.",
+      details: "This is a detailed description for Product Six.",
+      reviewsCount: 28,
+    },
+  ];
+
+  return products.map((product) => ({
+    params: { productName: product.title.toLowerCase().replace(/\s+/g, "-") },
+    props: product,
+  }));
+}
+
+const { title, price, src, alt, description, details, reviewsCount } =
+  Astro.props;
+---
+
+<Layout title=`Brutal Restobar - ${title}`>
+  <Navigation />
+  <ProductDetails
+    title={title}
+    price={price}
+    src={src}
+    alt={alt}
+    description={description}
+    details={details}
+    reviewsCount={reviewsCount}
+  />
+  <Footer />
+</Layout>

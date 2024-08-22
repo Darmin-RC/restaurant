@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <header class="relative bg-white px-3 py-1 shadow max-h-14">
+    <div class="flex justify-between items-center">
+      <div class="flex content-center md:hidden">
+        <button
+          id="menu-button"
+          class="p-1 text-red-600 hover:bg-red-600 transition-colors rounded hover:text-white"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="flex content-center p-1">
+        <img
+          class="object-fill h-10 py-1"
+          src="https://res.cloudinary.com/studentbe/image/upload/f_auto,fl_progressive,q_auto:good,w_800/BRUTAL_met_haakjes_25_jpg_czrsg6"
+          alt="Logo"
+        />
+      </div>
+      <div class="hidden md:block">
+        <a
+          class="my-1 py-1 px-4 text-black hover:text-red-600 transition-colors"
+          href="/">Home</a
+        >
+        <a
+          class="my-1 py-1 px-4 text-black hover:text-red-600 transition-colors"
+          href="/about">About</a
+        >
+        <a
+          class="my-1 py-1 px-4 text-black hover:text-red-600 transition-colors"
+          href="/contact">Contact</a
+        >
+      </div>
+      <div class="flex p-2 -mr-2">
+        <a
+          href="/cart"
+          id="cart-button"
+          class="p-1 text-red-600 hover:bg-red-600 transition-colors rounded hover:text-white"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div id="overlay" class="hidden fixed inset-0 bg-black bg-opacity-50 z-40">
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="hidden shadow-xl absolute left-0 right-0 m-4 flex w-[calc(100% - 2rem)] flex-col my-5 bg-white px-3 py-6 rounded z-50 md:hidden"
+    >
+      <a
+        class="my-1 py-1 px-4 rounded border-red-600 border-2 text-white bg-black transition-colors"
+        href="/">Home</a
+      >
+      <a
+        class="bg-white my-1 py-1 px-4 rounded text-black border-red-600 border-2 hover:text-white hover:bg-black transition-colors"
+        href="/about">About</a
+      >
+      <a
+        class="bg-white my-1 py-1 px-4 rounded text-black border-red-600 border-2 hover:text-white hover:bg-black transition-colors"
+        href="/contact">Contact</a
+      >
+    </div>
+  </header>
+  <script>
+    const button = document.getElementById("menu-button");
+    const menu = document.getElementById("mobile-menu");
+    const overlay = document.getElementById("overlay");
+
+    button?.addEventListener("click", () => {
+      menu?.classList.toggle("hidden");
+      overlay?.classList.toggle("hidden");
+    });
+
+    overlay?.addEventListener("click", () => {
+      menu?.classList.add("hidden");
+      overlay?.classList.add("hidden");
+    });
+  </script>
+</Layout>

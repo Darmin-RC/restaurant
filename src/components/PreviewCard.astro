@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  price: number;
+  src: string;
+  alt: string;
+  href: string;
+}
+
+const { title, description, price, src, alt, href } = Astro.props;
+
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout>
+  <div class="bg-white rounded shadow-lg p-8">
+    <div class="relative overflow-hidden">
+      <a href={href} class="block">
+        <img class="rounded object-cover w-full h-full" src={src} alt={alt} />
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <button
+            class="bg-white text-red-900 py-2 px-6 rounded-full font-bold hover:bg-gray-300"
+          >
+            View Product
+          </button>
+        </div>
+      </a>
+    </div>
+    <h3 class="text-xl font-bold text-gray-900 mt-4">{title}</h3>
+    <p class="text-gray-500 text-sm mt-2">
+      {description}
+    </p>
+    <div class="flex items-center justify-between mt-4">
+      <span class="text-gray-900 font-bold text-lg">{`$${price}`}</span>
+      <button
+        class="bg-red-600 text-white py-2 px-4 rounded-full font-bold hover:bg-red-700"
+      >
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</Layout>
